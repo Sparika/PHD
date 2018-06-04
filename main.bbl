@@ -19,6 +19,60 @@
 
 \refsection{0}
   \sortlist{entry}{none}
+    \entry{DBLP:conf/icin/2015}{proceedings}{}
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \field{sortinit}{0}
+      \field{labeltitle}{18th International Conference on Intelligence in Next Generation Networks, {ICIN} 2015, Paris, France, February 17-19, 2015}
+      \field{isbn}{978-1-4799-1866-9}
+      \field{title}{18th International Conference on Intelligence in Next Generation Networks, {ICIN} 2015, Paris, France, February 17-19, 2015}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7070910
+      \endverb
+    \endentry
+    \entry{DBLP:conf/eurosys/2015awes}{proceedings}{}
+      \name{labelname}{3}{}{%
+        {{hash=b8758cd9a031b0fa74b88ba7fa0f74b5}{Bertin}{B\bibinitperiod}{Emmanuel}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=cedc087c8a372b607979dfed88808ae4}{Crespi}{C\bibinitperiod}{No{\"{e}}l}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=074ff660c73c141c58fe4dd819d42d63}{Glitho}{G\bibinitperiod}{Roch\bibnamedelima H.}{R\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=b8758cd9a031b0fa74b88ba7fa0f74b5}{Bertin}{B\bibinitperiod}{Emmanuel}{E\bibinitperiod}{}{}{}{}}%
+        {{hash=cedc087c8a372b607979dfed88808ae4}{Crespi}{C\bibinitperiod}{No{\"{e}}l}{N\bibinitperiod}{}{}{}{}}%
+        {{hash=074ff660c73c141c58fe4dd819d42d63}{Glitho}{G\bibinitperiod}{Roch\bibnamedelima H.}{R\bibinitperiod\bibinitdelim H\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{0f7ad713c93c885e75fa44e24b003420}
+      \strng{fullhash}{0f7ad713c93c885e75fa44e24b003420}
+      \field{sortinit}{0}
+      \field{labeltitle}{Proceedings of the 1st Workshop on All-Web Real-Time Systems, AWeS@EuroSys 2015, Bordeaux, France, April 21, 2015}
+      \field{isbn}{978-1-4503-3477-8}
+      \field{title}{Proceedings of the 1st Workshop on All-Web Real-Time Systems, AWeS@EuroSys 2015, Bordeaux, France, April 21, 2015}
+      \field{year}{2015}
+      \verb{doi}
+      \verb 10.1145/2749215
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/2749215
+      \endverb
+    \endentry
+    \entry{DBLP:conf/sp/2016}{proceedings}{}
+      \list{publisher}{1}{%
+        {{IEEE} Computer Society}%
+      }
+      \field{sortinit}{0}
+      \field{labeltitle}{{IEEE} Symposium on Security and Privacy, {SP} 2016, San Jose, CA, USA, May 22-26, 2016}
+      \field{isbn}{978-1-5090-0824-7}
+      \field{title}{{IEEE} Symposium on Security and Privacy, {SP} 2016, San Jose, CA, USA, May 22-26, 2016}
+      \field{year}{2016}
+      \verb{url}
+      \verb http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7528194
+      \endverb
+    \endentry
     \entry{corre_webrtc_2017}{inproceedings}{}
       \name{labelname}{4}{}{%
         {{hash=0d61596a004e195578795ef6744682e8}{Corre}{C\bibinitperiod}{Kevin}{K\bibinitperiod}{}{}{}{}}%
@@ -594,6 +648,7 @@
       \field{sortinit}{0}
       \field{labeltitle}{SoK: Everyone Hates Robocalls: {A} Survey of Techniques Against Telephone Spam}
       \field{booktitle}{{IEEE} Symposium on Security and Privacy, {SP} 2016, San Jose, CA, USA, May 22-26, 2016}
+      \strng{crossref}{DBLP:conf/sp/2016}
       \field{isbn}{978-1-5090-0824-7}
       \field{title}{SoK: Everyone Hates Robocalls: {A} Survey of Techniques Against Telephone Spam}
       \field{year}{2016}
@@ -762,6 +817,7 @@
       \field{sortinit}{0}
       \field{labeltitle}{On webco interoperability}
       \field{booktitle}{Proceedings of the 1st Workshop on All-Web Real-Time Systems, AWeS@EuroSys 2015, Bordeaux, France, April 21, 2015}
+      \strng{crossref}{DBLP:conf/eurosys/2015awes}
       \field{isbn}{978-1-4503-3477-8}
       \field{title}{On webco interoperability}
       \field{year}{2015}
@@ -1737,6 +1793,7 @@
       \field{sortinit}{0}
       \field{labeltitle}{Specialized network services for WebRTC: TURN-based architecture proposal}
       \field{booktitle}{Proceedings of the 1st Workshop on All-Web Real-Time Systems, AWeS@EuroSys 2015, Bordeaux, France, April 21, 2015}
+      \strng{crossref}{DBLP:conf/eurosys/2015awes}
       \field{isbn}{978-1-4503-3477-8}
       \field{title}{Specialized network services for WebRTC: TURN-based architecture proposal}
       \field{year}{2015}
@@ -2560,6 +2617,7 @@
       \field{sortinit}{0}
       \field{labeltitle}{Beauty and the Beast: Diverting Modern Web Browsers to Build Unique Browser Fingerprints}
       \field{booktitle}{{IEEE} Symposium on Security and Privacy, {SP} 2016, San Jose, CA, USA, May 22-26, 2016}
+      \strng{crossref}{DBLP:conf/sp/2016}
       \field{isbn}{978-1-5090-0824-7}
       \field{title}{Beauty and the Beast: Diverting Modern Web Browsers to Build Unique Browser Fingerprints}
       \field{year}{2016}
@@ -2674,6 +2732,31 @@
       \field{year}{2017}
       \verb{url}
       \verb http://www.ietf.org/internet-drafts/html/draft-ietf-rtcweb-ip-handling-04
+      \endverb
+    \endentry
+    \entry{INTA_DarkWeb}{report}{}
+      \name{labelname}{1}{}{%
+        {{hash=69e8e0190c69ac503d0a6bf1a12e6626}{Bray}{B\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=69e8e0190c69ac503d0a6bf1a12e6626}{Bray}{B\bibinitperiod}{T.}{T\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Anticounterfeiting Committee}%
+      }
+      \list{publisher}{1}{%
+        {International Trademark Association}%
+      }
+      \strng{namehash}{69e8e0190c69ac503d0a6bf1a12e6626}
+      \strng{fullhash}{69e8e0190c69ac503d0a6bf1a12e6626}
+      \field{sortinit}{0}
+      \field{labeltitle}{Anticounterfeiting on the Dark Web}
+      \field{month}{04}
+      \field{note}{\url{http://www.inta.org/Advocacy/Documents/2015/ACC%20Dark%20Web%20Report.pdf}}
+      \field{title}{Anticounterfeiting on the Dark Web}
+      \field{year}{2015}
+      \verb{url}
+      \verb http://www.inta.org/Advocacy/Documents/2015/ACC%20Dark%20Web%20Report.pdf
       \endverb
     \endentry
     \entry{nurminen2013p2p}{inproceedings}{}
@@ -3659,6 +3742,7 @@
       \field{sortinit}{0}
       \field{labeltitle}{A decision theory based tool for detection of encrypted WebRTC traffic}
       \field{booktitle}{18th International Conference on Intelligence in Next Generation Networks, {ICIN} 2015, Paris, France, February 17-19, 2015}
+      \strng{crossref}{DBLP:conf/icin/2015}
       \field{isbn}{978-1-4799-1866-9}
       \field{title}{A decision theory based tool for detection of encrypted WebRTC traffic}
       \field{year}{2015}
@@ -4157,6 +4241,7 @@
       \field{sortinit}{0}
       \field{labeltitle}{Identity management for Web business communications}
       \field{booktitle}{18th International Conference on Intelligence in Next Generation Networks, {ICIN} 2015, Paris, France, February 17-19, 2015}
+      \strng{crossref}{DBLP:conf/icin/2015}
       \field{isbn}{978-1-4799-1866-9}
       \field{title}{Identity management for Web business communications}
       \field{year}{2015}

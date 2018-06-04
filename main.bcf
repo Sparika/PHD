@@ -2301,33 +2301,6 @@
     <bcf:citekey order="334">Watson:17:WCA</bcf:citekey>
     <bcf:citekey order="335">Hickson:16:WSE</bcf:citekey>
     <bcf:citekey order="336">Denicola:18:PRA</bcf:citekey>
-    <bcf:citekey order="337">I-D.ietf-acme-acme</bcf:citekey>
-    <bcf:citekey order="338">RFC6454</bcf:citekey>
-    <bcf:citekey order="339">9524886</bcf:citekey>
-    <bcf:citekey order="340">RFC6347</bcf:citekey>
-    <bcf:citekey order="341">RFC2616</bcf:citekey>
-    <bcf:citekey order="342">RFC2818</bcf:citekey>
-    <bcf:citekey order="343">RFC5245</bcf:citekey>
-    <bcf:citekey order="344">RFC791</bcf:citekey>
-    <bcf:citekey order="345">I-D.ietf-rtcweb-jsep</bcf:citekey>
-    <bcf:citekey order="346">RFC7159</bcf:citekey>
-    <bcf:citekey order="347">RFC7519</bcf:citekey>
-    <bcf:citekey order="348">sakimura_openid_2014</bcf:citekey>
-    <bcf:citekey order="349">RFC3550</bcf:citekey>
-    <bcf:citekey order="350">RFC3550</bcf:citekey>
-    <bcf:citekey order="351">RFC4960</bcf:citekey>
-    <bcf:citekey order="352">RFC4568</bcf:citekey>
-    <bcf:citekey order="353">RFC4566</bcf:citekey>
-    <bcf:citekey order="354">RFC3261</bcf:citekey>
-    <bcf:citekey order="355">RFC3711</bcf:citekey>
-    <bcf:citekey order="356">RFC5763</bcf:citekey>
-    <bcf:citekey order="357">RFC5389</bcf:citekey>
-    <bcf:citekey order="358">RFC793</bcf:citekey>
-    <bcf:citekey order="359">RFC5246</bcf:citekey>
-    <bcf:citekey order="360">RFC5766</bcf:citekey>
-    <bcf:citekey order="361">RFC768</bcf:citekey>
-    <bcf:citekey order="362">RFC3986</bcf:citekey>
-    <bcf:citekey order="363">RFC3986</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" type="entry" label="none">
   <bcf:sorting>
