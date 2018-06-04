@@ -9,6 +9,8 @@
 *.ist
 *.lof
 *.lot
+*.bbl
+*.bcf
 *.out
 main.run.xml
 *.soc
