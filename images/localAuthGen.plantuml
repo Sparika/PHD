@@ -1,0 +1,34 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontStyle bold
+
+autonumber
+
+		participant "UA A" as uaa
+
+		box "Communication Service A"
+        participant "IdP Proxy A" as idpa
+		participant "JS Client A" as js
+        participant "CSA" as csa
+		end box
+
+js		 -> uaa			: setIdentityProvider(CSA, "local")
+js		 -> uaa			: createOffer / createAnswer
+uaa		 -> csa			: GET ./well-known/idp-proxy/local
+csa		 -> uaa			: 200
+create idpa	
+uaa		 -> idpa		: <<CREATE>>
+uaa		 ->	idpa		: generateAssertion(CONTENT)
+idpa	 -> csa			: POST /assertion {"contents":CONTENT}
+alt Success
+csa		 -->> idpa		: 200 {"id":KEY}
+idpa	 -->> uaa		: resolve RTCIdentityAssertionResult
+else Unauthenticated
+csa		 -->> idpa		: 302
+idpa	 -->> uaa		: reject IdPLoginError
+end
+uaa		 -->> js			: SDP
+
+
+@enduml

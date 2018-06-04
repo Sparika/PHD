@@ -1,0 +1,27 @@
+\newgeometry{
+            left=2.2cm,
+            right=2.2cm,
+            top=2.2cm,
+            bottom=3.5cm,
+            ignoremp}
+\renewpagestyle{scrheadings}{
+  {\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad\leftmark}%
+  {\hfill\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\hfill\thepage}%
+  {}
+}
+%\chapter*{Afterword}
+%\addcontentsline{toc}{chapter}{Acknowledgment}
+%\thispagestyle{empty}

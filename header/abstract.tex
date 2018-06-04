@@ -1,0 +1,80 @@
+\newgeometry{
+            left=2.2cm,
+            right=2.2cm,
+            top=2.2cm,
+            bottom=3.5cm,
+            ignoremp}
+\renewpagestyle{scrheadings}{
+  {\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad\leftmark}%
+  {\hfill\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\hfill\thepage}%
+  {}
+}
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\thispagestyle{empty}
+\glsresetall
+Nowadays, communications transiting through the Internet are encrypted by default, often end-to-end.
+Secure communication is a commodity accessible to everyone rather than restricted to powerful organisations.
+Users are being educated to the security risks faced on the internet and to pay attention to security indications.
+But this does not solve every security issues: a trusted third party is still required in order to setup the communication.
+Security on the Web is based on a certificate chain anchored into the web browser.
+The emerging web functionalities offer a lot more possible use-cases than the usual client-server communication.
+Real-time media and data communication is one of these complex use-cases which involves peer-to-peer and full-duplex client-server communications.
+On one hand legacy inter-operable communication systems suffer from issues regarding the trustworthiness of their incoming call.
+On the other hand over-the-top communication networks are all set in a silo model: users are de-facto captive of these services.
+
+WebRTC is a set of standard web API and protocols, which supports peer-to-peer audio-video calling and data sharing.
+It is envisioned, given the simplicity to deploy a WebRTC services, that the number of WebRTC enabled websites could skyrocket in the near future.
+To succeed, WebRTC should improve from the issues encountered by previous technologies.
+A weak identity model may have an important impact later on and is particularly hard to fix once the system is deployed.
+Considering the various use cases and the possible number of services and other actors, the complexity of a communication setup could be really difficult to assess by non-expert users.
+
+Our intuition is that users should be given more informations and control on the security and trust level of their communications.
+We want to build a model that could represent the communication setup, the different channels, protocols, and actors in operations.
+This model would allow us to act on the system in order to raise the trust and security level.
+At the moment, WebRTC's final version of the specification has not yet been published, and some functionalities are yet to be implemented in Web Browsers.
+It may be the right time to challenge its security architecture by addressing the following research questions:
+
+\begin{itemize}
+\item \textbf{RQ1}: What are the risks for the user of a WebRTC session and which abstractions can we use to show these risks to the user?
+\item \textbf{RQ2}: Can we act on a WebRTC session to raise the trust and security level? 
+\item \textbf{RQ3}: Can users choose actors they trust to participate in the communication setup?
+\end{itemize}
+
+In this thesis, we propose three main contributions:
+
+In our first contribution we study the WebRTC identity architecture and more particularly its integration with existing authentication delegation protocols.
+This integration has not been studied yet. 
+To fill this gap, we implement components of the WebRTC identity architecture and comment on the issues encountered in the process.
+In order to answer RQ1, we then study this specification from a privacy perspective an identify new privacy considerations related to the central position of identity provider.
+In the Web, the norm is the silo architecture of which users are captive.
+This is even more true of authentication delegation systems where most of the time it is not possible to freely choose an identity provider.
+In order to answer RQ3, we conduct a survey on the top 500 websites according to Alexa.com to identify the reasons why can't users choose their identity provider.
+Our results show that while the choice of an identity provider is possible in theory, the lack of implementation of existing standards by websites and identity providers prevent users to make this choice.
+
+In our second contribution, we aim at giving more control to users.
+To this end and in order to answer RQ2, we extend the WebRTC specification to allow identity parameters negotiation.
+We present a prototype implementation of our proposition to validate it.
+It reveals some limits due to the WebRTC API, in particular preventing to get feedback on the other peer's authentication strength.
+We then propose a web API allowing users to choose their identity provider in order to authenticate on a third-party website, answering RQ2.
+Our API reuse components of the WebRTC identity architecture in a client-server authentication scenario. 
+Again, we validate our proposition by presenting a prototype implementation of our API based on a Firefox extension.
+
+Finally, in our third contribution, we look back on RQ1 and propose a trust and security model of a WebRTC session.
+Our proposed model integrates in a single metric the security parameters used in the session establishment, the encryption parameters for the media streams, and trust in actors of the communication setup as defined by the user.
+Our model objective is to help non-expert users to better understand the security of their WebRTC session.
+To validate our approach, we conduct a preliminary study on the comprehension of our model by non-expert users.
+This study is based on a web survey offering users to interact with a dynamic implementation of our model.

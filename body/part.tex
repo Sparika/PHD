@@ -1,0 +1,105 @@
+    \newgeometry{
+            left=2.2cm,
+            right=2.2cm,
+            top=2.2cm,
+            bottom=3.5cm,
+            ignoremp}
+            
+            \renewpagestyle{scrheadings}{
+  {\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad\leftmark}%
+  {\hfill\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\hfill\thepage}%
+  {}
+}
+            
+\part{Context}
+\label{context}
+
+\restoregeometry
+\renewpagestyle{scrheadings}{
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad{}\leftmark}}%
+  {\makebox[\overflowingheadlen][r]{\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\makebox[\overflowingheadlen][r]{\thepage}}%
+  {}
+}
+
+\input{body/part1/context}
+\input{body/part1/sota}
+\newpage
+
+    \newgeometry{
+            left=2.2cm,
+            right=2.2cm,
+            top=2.2cm,
+            bottom=3.5cm,
+            ignoremp}
+            
+\renewpagestyle{scrheadings}{
+  {\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad\leftmark}%
+  {\hfill\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\hfill\thepage}%
+  {}
+}
+            
+\part{Contributions}
+\label{contributions}
+
+\restoregeometry
+\renewpagestyle{scrheadings}{
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad{}\leftmark}}%
+  {\makebox[\overflowingheadlen][r]{\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\makebox[\overflowingheadlen][r]{\thepage}}%
+  {}
+}
+
+\input{body/part2/privacyimpact}
+\input{body/part2/identitynegotiation}
+\input{body/part2/webrtcmodel}

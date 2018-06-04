@@ -1,0 +1,36 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontStyle bold
+
+autonumber
+
+
+		participant "JS Client A" as js
+
+		participant "UA A" as uaa
+
+		box "Identity Provider"
+        participant "IdP Proxy A" as idpa
+		participant "OIDC AS" as idp
+		end box
+
+js		 -> uaa			: setIdentityProvider(AS, "default")
+js		 -> uaa			: createOffer / createAnswer
+uaa		 -> idp			: GET ./well-known/idp-proxy/default
+idp		 -> uaa			: 200
+create idpa	
+uaa		 -> idpa		: <<CREATE>>
+uaa		 ->	idpa		: generateAssertion(CONTENT)
+idpa	 -> idp			: "GET /authorize\n?rtcsdp=content&OIDC"
+alt Success
+idp		 -->> idpa		: 200 JWT
+idpa	 -->> uaa		: resolve RTCIdentityAssertionResult
+uaa		 -->> js		: SDP
+else Unauthenticated or Unauthorized
+idp		 -->> idpa		: 302
+idpa	 -->> uaa		: "reject IdPLoginError \n /authorize?OIDC"
+end
+
+
+@enduml

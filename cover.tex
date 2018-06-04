@@ -1,0 +1,123 @@
+\documentclass[10pt]{book}
+
+%%%%%%%%%%
+% Packages utilises
+%%%%%%%%%%
+% Langue
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} % On peut aussi mettre english ici.
+% Figures et couleurs
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{color}
+\definecolor{gris}{gray}{0.45}
+% Font math
+\usepackage{amssymb, amsmath, amsfonts}
+\usepackage{dsfont}
+% Mise en page latex et police
+\usepackage{vmargin}
+
+%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%
+
+
+%\addtocounter{page}{-1} % Pour revenir a 0 dans la numerotation des pages.
+
+%%%%%%%%%%
+% PREMIERE DE COUVERTURE
+%%%%%%%%%%
+
+\newlength{\plarg}
+\setlength{\plarg}{8.3cm}
+\newlength{\glarg}
+\setlength{\glarg}{14cm}
+\newlength{\Glarg}
+\setlength{\Glarg}{15cm}
+
+\begin{titlepage}
+\thispagestyle{empty}
+%\noindent
+%\noindent
+%\begin{minipage}{\glarg}
+%{\large LOGO labo} \hfill {\large LOGO Ecole} 
+%{\rule{\glarg}{1pt}} \vspace{-1cm}
+%\begin{center}
+%\begin{tabular}{p{13cm}r}
+%\hspace{-2mm}\textbf{Nom Labo} & \textbf{LABO} \\
+%\hspace{-2mm}Nom complet & Section \dots \\
+%\hspace{-2mm}du laboratoire & 
+%\end{tabular}
+%\end{center}
+%\end{minipage}
+
+\vspace{-1cm}
+\begin{minipage}{\glarg}
+\vspace{-4.5cm}
+{\color{gris}\large\hfill \bf ANN\'EE 2018}
+\end{minipage}
+\vspace{-2cm}
+\begin{figure}[htp]
+\raisebox{14mm}{\includegraphics[angle=0,width=50mm]{ur1.png}}\hfill\includegraphics[angle=0,width=47mm]{ubl.jpg}
+\end{figure}
+
+\begin{center}
+\begin{minipage}{\glarg}
+\vspace{0.5cm}
+\centering{\Large\bfseries TH\`ESE / UNIVERSIT\'E DE RENNES 1}\\ \vspace{0mm}\emph{\Large sous le sceau de l'Universit\'e Bretagne Loire}\\ \vspace{0.5cm}
+{\Large pour le grade de}\\ \vspace{2mm}
+{\Large\bf DOCTEUR DE L'UNIVERSIT\'E DE RENNES 1}\\ \vspace{0.4cm}
+\emph{\Large Mention : Informatique}\\ \vspace{2mm}
+{\Large\bf Ecole doctorale MathSTIC}\\ \vspace{0.3cm}
+{\Large pr\'esent\'ee par} \\ \vspace{3mm}
+{\Huge\bf Kevin CORRE}\\ \vspace{0.4cm}
+{\Large pr\'epar\'ee \`a l'unit\'e de recherche IRISA (UMR 6074)\\
+Institut de Recherche en Informatique et Systèmes Aléatoires\\
+ISTIC - UFR en Informatique et \'Electronique}\vspace{0.3cm}
+\\
+\hspace{-20mm}{\rule{\Glarg}{1pt}}\\
+\vspace{8mm}
+
+\begin{tabular}{p{5cm}p{10cm}}
+\begin{minipage}{\plarg}
+\vspace{-4cm}
+\hspace{-1.8cm}{\huge\bf User Controlled}\vspace{5mm}
+
+\hspace{-1.8cm}{\huge\bf Trust and }\vspace{5mm}
+
+\hspace{-1.8cm}{\huge\bf Security Level}\vspace{5mm}
+
+\hspace{-1.8cm}{\huge\bf of Web Real-Time}\vspace{5mm}
+
+\hspace{-1.8cm}{\huge\bf Communications}
+\end{minipage}
+&
+\begin{minipage}{\plarg}
+{\large\bf Th\`ese soutenue \`a Rennes\vspace{1mm}\newline}
+{\large\bf le 31 mai 2018\vspace{2mm}\newline}
+{\large devant le jury compos\'e de : \vspace{2mm}\newline}
+{\Large\bf Maryline LAURENT\vspace{0mm}\newline}
+{ Professeur, TELECOM SudParis \!/\! rapporteur\vspace{1mm}\newline}
+{\Large\bf Yvon KERMARREC\vspace{0mm}\newline}
+{ Professeur, IMT Atlantique \!/\! rapporteur\vspace{1mm}\newline}
+{\Large\bf Walter RUDAMETKIN\vspace{0mm}\newline}
+{ Ma\^itre de Conf\'erences, Universit\'e de Lille \!/\! examinateur\vspace{1mm}\newline}
+{\Large\bf Dominique HAZAEL-MASSIEUX\vspace{0mm}\newline}
+{ Ingénieur de Recherche, W3C \!/\! examinateur\vspace{1mm}\newline}
+{\Large\bf Vincent FREY\vspace{0mm}\newline}
+{ R\&D Software Engineer, Orange Labs \!/\! examinateur\vspace{1mm}\newline}
+%{\Large\bf Simon B\'ECOT\vspace{0mm}\newline}
+%{ R\&D Software Engineer, Orange Labs \!/\! examinateur\vspace{1mm}\newline}
+{\Large\bf Olivier BARAIS\vspace{0mm}\newline}
+{ Professeur, Universit\'e de Rennes 1 \!/\! directeur de th\`ese\vspace{1mm}\newline}
+{\Large\bf Gerson SUNY\'E\vspace{0mm}\newline}
+{ Ma\^itre de Conf\'erences, Universit\'e de Nantes \!/\! co-directeur de th\`ese}
+
+\end{minipage}
+\end{tabular}
+
+\end{minipage}
+\end{center}
+\end{titlepage}
+
+\end{document}

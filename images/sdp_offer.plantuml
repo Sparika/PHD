@@ -1,0 +1,47 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontStyle bold
+
+autonumber
+
+        participant "IdP Proxy A" as idpa
+        participant "RA" as ra
+		participant "UA A" as uaa
+        participant "UA B" as uab
+		participant "IdP Proxy B" as idpb
+
+uaa		 ->	idpa		: GenerateAssertion
+idpa	 -->> uaa			: ASSERTION_A
+
+uaa		 -> ra 			: Get parameters
+ra		 -->> uaa			: ACR, Origin
+
+uaa		 -> uab 		: SDP OFFER a=identity: ASSERTION_A a=acor:List<ACR> ; List<ORIGIN>
+uab		 -> uab			: Check available IdP Origin
+
+alt Unable to authenticate with Origin
+uab		 -> uaa			: SDP ANSWER
+else 
+uab		 -> idpb		: GenerateAssertion(ACR)
+
+alt Unable to authenticate with ACR
+idpb	 -->> uab			: IdpLoginError
+uab		 -> uaa			: SDP ANSWER
+else 
+opt Need to reauthenticate with ACR
+idpb	 -->> uab			: IdpLoginError(loginURL)
+uab		 -> uab			: HTTP GET loginURL
+uab		 -> idpb 		: GenerateAssertion(ACR)
+end
+idpb	 -->> uab			: ASSERTION_B
+uab		 -> uaa 		: SDP ANSWER a=identity ASSERTION_B
+uaa		 -> idpb		: ValidateAssertion(ASSERTION_B)
+idpb	 -->> uaa			: IdentityValidationResult with ACR
+
+uaa		 -> uab			: OPEN MEDIA CHANNEL
+
+end
+end
+
+@enduml

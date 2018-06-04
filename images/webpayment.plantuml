@@ -1,0 +1,23 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontStyle bold
+
+autonumber
+
+        participant "Payment App" as app
+        participant "Mediator" as ua
+		participant "Website" as site
+		participant "Payment\nNetwork" as net
+		
+ua 	 	-> site			: Click "Buy"
+site	-> ua	 		: Payment Request
+ua		-> ua			: Select Payment App \n and transaction details
+ua	 	-> app			: Payment Request
+app		-> ua			: Payment Response
+ua		-> site			: Payment Response
+site	-> net			: Payment Instruction
+net		-> site			: Payment Success
+site	-> ua			: Purchase Successful
+
+@enduml

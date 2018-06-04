@@ -1,0 +1,45 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontStyle bold
+skinparam style strictuml
+
+autonumber
+        participant "IdP Proxy A" as idpa
+		participant "UA A" as uaa
+        participant "UA B" as uab
+        participant "RB" as rb
+
+uaa		 ->	idpa		: GenerateAssertion
+idpa	 -->> uaa			: ASSERTION_A
+
+opt Get parameters from RA
+end
+
+uaa		 -> uab 		: SDP OFFER a=identity:ASSERTION_A
+uab 	 -> rb			: Get paramaters
+rb		 -->> uab			: ACR, Origin
+
+opt Generate ASSERTION_B
+end
+
+alt Untrusted origin
+uab		 ->> uaa			: SDP ANSWER a=identity:ASSERTION_B a=acor:List<ACR> ; List<ORIGIN>
+opt A uses a requested IdP origin
+end
+else Trusted origin
+uab		 -> idpa		: ValidateAssertion(ASSERTION_A)
+idpa	 -->> uab			: IdentityValidationResult with ACR
+alt Untrusted ACR
+uab		 -> uaa			: SDP ANSWER a=identity:ASSERTION_B a=acor:List<ACR> ; List<ORIGIN>
+opt A authenticates with one of the requested ACR level
+end
+else Trusted ACR		
+uab		 -> uaa			: SDP ANSWER a=identity: ASSERTION_B
+
+uaa		 -> uab			: OPEN MEDIA CHANNEL
+
+end
+end
+
+@enduml

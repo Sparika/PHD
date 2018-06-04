@@ -1,0 +1,472 @@
+\documentclass[10pt]{book}
+
+%%%%%%%%%%
+% Packages utilises
+%%%%%%%%%%
+% Langue
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel} % On peut aussi mettre english ici.
+% Figures et couleurs
+\usepackage{graphicx}
+
+\usepackage{adjustbox}
+
+\usepackage[justification=justified, font=small]{caption}
+\usepackage{subcaption}
+%\usepackage{subfig}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\definecolor{gris}{gray}{0.45}
+\usepackage[noabbrev,capitalize]{cleveref}
+
+\usepackage{fancyvrb}
+\definecolor{matviolet}{HTML}{ A569BD}
+\definecolor{matblue}{HTML}{0075DA}
+\definecolor{matgreen}{HTML}{20A463}
+\definecolor{matred}{HTML}{DC4F43}
+\definecolor{matorange}{HTML}{FBA320}
+\definecolor{matyellow}{HTML}{FECD43}
+\definecolor{matgrey}{HTML}{AAABBA}
+% Font math
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\newtheorem{definition}{Definition}
+\usepackage{dsfont}
+\usepackage{pbox}
+% Mise en page latex et police
+%\usepackage{vmargin}
+\usepackage[latin9]{inputenc}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+
+\usepackage[nonumberlist,nopostdot]{glossaries}	% Ensures that all acronyms are defined once
+	\let\oldnewacronym\newacronym
+	\newcommand*{\provideacronym}[3]{%
+	  \ifglsentryexists{#1}{%
+	  }{%
+	    \oldnewacronym{#1}{#2}{#3}%
+	  }%
+	}
+
+\usepackage{glossary-mcols}	
+
+\usepackage{xifthen}
+\usepackage{xparse}
+\DeclareDocumentCommand{\newdualentry}{ O{} O{} m m m m o } {
+  \newglossaryentry{#3}
+  	{name={#4},
+	first={#5 (#4)},
+	description={#6},
+	long={#1}
+	parent=\ifthenelse{\equal{#7}{}}{,}{#7}
+  }
+%  \makeglossaries
+%  \newacronym[see={[Glossary:]{gls-#3}},#2]{#3}{#4}{#5\glsadd{gls-#3}}
+}
+	
+\glossarystyle{mcoltree}
+\makeglossaries
+ \input{glossary}
+
+
+%\newacronym[see={[Glossary:]{gls-OWD}}]{OWD}{OWD}{One-Way Delay}
+
+
+\usepackage{enumitem}
+
+\newlist{inparaenum}{enumerate}{6}% allow two levels of nesting in an enumerate-like environment
+\setlist[inparaenum]{nosep}% compact spacing for all nesting levels
+\setlist[inparaenum,1]{label={}}% labels for top level
+\setlist[inparaenum,2]{label={}}% labels for second level
+\setlist[inparaenum,3]{label={}}% labels for second level
+\setlist[inparaenum,4]{label={}}% labels for second level
+\setlist[inparaenum,5]{label={}}% labels for second level
+\setlist[inparaenum,6]{label={}}% labels for second level
+\setlist[enumerate]{label={}}%{label*=\arabic*.}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{url}
+
+\usepackage[procnames]{listings}
+
+\usepackage{siunitx}
+
+\newcommand{\etal}{\textit{et al.~}}
+\newcommand{\eg}[0]{\textit{e.\,g.~}}
+\newcommand{\ie}[0]{\textit{i.\,e.~}}
+
+
+% TABLE
+\usepackage{booktabs}
+\renewcommand{\arraystretch}{1.2}
+
+
+% SIDE NOTES
+\usepackage[includemp,
+	    head=100pt,
+            left=2.2cm,
+            right=1.5cm,
+            top=2.20cm,
+            bottom=3.50cm,
+            marginparwidth=4cm,
+            marginparsep=0.5cm]{geometry}            
+
+\newlength{\overflowingheadlen}
+\setlength{\overflowingheadlen}{\linewidth}
+\addtolength{\overflowingheadlen}{\marginparsep}
+\addtolength{\overflowingheadlen}{\marginparwidth}
+
+\usepackage{scrlayer-scrpage}
+\renewpagestyle{scrheadings}{
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad{}\leftmark}}%
+  {\makebox[\overflowingheadlen][r]{\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\makebox[\overflowingheadlen][r]{\thepage}}%
+  {}
+}
+
+\usepackage{marginfix}
+
+\usepackage[footnote]{snotez}
+\setsidenotes{text-mark-format=\textsuperscript{\normalfont#1},
+              note-mark-format=#1:,
+              note-mark-sep=\enskip}
+
+\usepackage{floatrow}
+\floatsetup[figure]{margins=hangoutside,
+                    facing=yes,
+                    capposition=beside,
+                    capbesideposition={center,outside},
+                    floatwidth=\textwidth}
+\floatsetup[subfigure]{margins=hangoutside,
+                    facing=yes,
+                    capposition=beside,
+                    capbesideposition={center,outside},
+                    floatwidth=\textwidth}
+\floatsetup[table]{margins=hangoutside,
+                   facing=yes,
+                   capposition=beside,
+                   capbesideposition={center,outside},
+                   floatwidth=\textwidth}
+\floatsetup[widefigure]{margins=hangoutside,
+                   facing=yes,
+                   capposition=bottom}
+\floatsetup[widetable]{margins=hangoutside,
+                       facing=yes,
+                       capposition=bottom}
+
+\usepackage{todonotes}
+\usepackage{changes}
+
+
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{ContextFrame}{%
+    linecolor=black,
+    outerlinewidth=1pt,
+    roundcorner=10pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+    innerrightmargin=20pt,
+    innerleftmargin=20pt,
+    backgroundcolor=white,
+    frametitlerule=false,
+    frametitlerulewidth=2pt, 
+    frametitlebackgroundcolor=matblue,
+    skipbelow=15pt
+    }
+\mdfdefinestyle{SOTAFrame}{%
+    linecolor=black,
+    outerlinewidth=1pt,
+    roundcorner=10pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+    innerrightmargin=20pt,
+    innerleftmargin=20pt,
+    backgroundcolor=white,
+    frametitlerule=false,
+    frametitlerulewidth=2pt, 
+    frametitlebackgroundcolor=matblue,
+    skipbelow=15pt
+    }
+\mdfdefinestyle{C1Frame}{%
+    linecolor=black,
+    outerlinewidth=1pt,
+    roundcorner=10pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+    innerrightmargin=20pt,
+    innerleftmargin=20pt,
+    backgroundcolor=white,
+    frametitlerule=false,
+    frametitlerulewidth=2pt, 
+    frametitlebackgroundcolor=matgreen,
+    skipbelow=15pt
+    }
+\mdfdefinestyle{C2Frame}{%
+    linecolor=black,
+    outerlinewidth=1pt,
+    roundcorner=10pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+    innerrightmargin=20pt,
+    innerleftmargin=20pt,
+    backgroundcolor=white,
+    frametitlerule=false,
+    frametitlerulewidth=2pt, 
+    frametitlebackgroundcolor=matred,
+    skipbelow=15pt
+    }
+\mdfdefinestyle{C3Frame}{%
+    linecolor=black,
+    outerlinewidth=1pt,
+    roundcorner=10pt,
+    innertopmargin=\baselineskip,
+    innerbottommargin=\baselineskip,
+    innerrightmargin=20pt,
+    innerleftmargin=20pt,
+    backgroundcolor=white,
+    frametitlerule=false,
+    frametitlerulewidth=2pt, 
+    frametitlebackgroundcolor=matorange,
+    skipbelow=15pt
+    }
+    
+    \newcommand\invisiblesection[1]{%
+  \refstepcounter{section}%
+  \addcontentsline{toc}{section}{\protect\numberline{\thesection}#1}%
+  \sectionmark{#1}}
+
+
+%%%%%%%%% BIBLIO
+\usepackage[sorting=none, doi=false,isbn=false,url=false, maxnames=20, backend=biber]{biblatex} % load the package
+\renewbibmacro{in:}{}
+\AtEveryBibitem{%
+  \clearlist{language}%
+}
+\AtEveryBibitem{\clearfield{month}}
+%\DeclareNameAlias{default}{last-first}
+\addbibresource{biblio/publications.bib} % add a bib-reference file
+\addbibresource{biblio/thesis.bib} % add a bib-reference file
+\addbibresource{biblio/sota.bib} % add a bib-reference file
+
+\usepackage{multicol}
+\usepackage[lof,lot,toc]{multitoc}
+%\makeatletter
+%\renewcommand*{\@starttoc}[1]{\bgroup% use locak registers
+%   \@ifundefined{multicolumn#1}{\count1=1}{\count1=\csname multicolumn#1\endcsname}%
+%   \ifnum\count1>1
+%     \begin{multicols}{\count1}%
+%       \@multitoc@starttoc{#1}%
+%     \end{multicols}%
+%   \else
+%     \@multitoc@starttoc{#1}%
+%   \fi
+%\egroup}%
+%\makeatother
+\makeatletter
+\renewcommand*{\@starttoc}[1]{%
+	%\@ifundefined{multicolumn#1}{\count1=1}{\count1=\csname multicolumn#1\endcsname}
+
+	\ifthenelse{\boolean{@multitoc@toc}\and\equal{#1}{toc}}{%
+%		\ifnum\count1>1
+%			\begin{multicols}{\multicolumntoc}%
+%				\@multitoc@starttoc{#1}%
+%			\end{multicols}%
+%		\else
+			\@multitoc@starttoc{#1}%
+	}{}%
+	\ifthenelse{\boolean{@multitoc@lot}\and\equal{#1}{lot}}{%
+		\begin{multicols}{\multicolumnlot}%
+			\@multitoc@starttoc{#1}%
+		\end{multicols}%
+	}{}%
+	\ifthenelse{\boolean{@multitoc@lof}\and\equal{#1}{lof}}{%
+		\begin{multicols}{\multicolumnlof}%
+			\@multitoc@starttoc{#1}%
+		\end{multicols}%
+	}{}%
+}
+\makeatother
+
+\renewcommand*{\multicolumntoc}{1}
+\renewcommand*{\multicolumnlof}{2}
+\renewcommand*{\multicolumnlot}{2}
+
+\usepackage{pdfpages}
+
+%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%
+\renewpagestyle{scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\hfill\thepage}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\hfill\thepage}%
+  {}
+}
+\newpage
+\pagenumbering{gobble}
+\clearpage
+
+%\thispagestyle{empty}
+\includepdf[fitpaper=true, pages=-]{cover.pdf}
+\clearpage
+%\thispagestyle{empty}
+%\include{header/abstract_short}
+
+\nocite{corre_webrtc_2017,
+	corre_whyusers_2017,
+	I-D.copeland-rtcweb-p2p-idp-auth,
+	corre_authent,
+	copeland_framework_2015,
+	crom_management_2015,
+	crom_implementation_2016,
+	crom_implementation_2017,
+	javed_cross-domain_2017} % Display all my publications
+
+%%%%%%%%%%
+% FRONT MATTER
+\frontmatter
+%%%%%%%%%%
+
+\pagenumbering{gobble}
+\include{header/preface}
+\cleardoublepage
+
+\pagenumbering{roman}
+
+\include{header/resume}
+\clearpage
+
+\include{header/abstract}
+\cleardoublepage
+
+\tableofcontents
+\clearpage
+
+\restoregeometry
+\renewpagestyle{scrheadings}{
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad{}\leftmark}}%
+  {\makebox[\overflowingheadlen][r]{\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\makebox[\overflowingheadlen][r]{\thepage}}%
+  {}
+}
+
+
+%%%%%%%%%%
+% MAIN MATTER
+\mainmatter
+%%%%%%%%%%
+\include{header/introduction}
+\clearpage
+\input{body/part}
+
+
+
+
+%%%%%%%%%%
+% END MATTER
+%%%%%%%%%%
+    \newgeometry{
+            left=2.2cm,
+            right=2.2cm,
+            top=2.2cm,
+            bottom=3.5cm,
+            ignoremp}
+            
+\renewpagestyle{scrheadings}{
+  {\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad\leftmark}%
+  {\hfill\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\hfill\thepage}%
+  {}
+}
+    \part{Conclusion and Perspectives}
+    \label{summary}
+    \restoregeometry
+
+      \newgeometry{
+            left=2.2cm,
+            right=2.2cm,
+            top=2.2cm,
+            bottom=3.5cm,
+            ignoremp}
+
+\include{header/conclusion}
+    \restoregeometry
+
+\include{header/perspectives}
+
+\include{header/acknowledgment}
+      
+
+      \newgeometry{
+            left=2.2cm,
+            right=2.2cm,
+            top=2.2cm,
+            bottom=3.5cm,
+            ignoremp}
+
+\addcontentsline{toc}{chapter}{Author's Publications}      
+      \printbibliography[title={Author's Publications},keyword=own]
+\addcontentsline{toc}{chapter}{References}
+\begin{multicols}{2}[\printbibheading]
+\printbibliography[title={References},notkeyword=own,heading=none]
+\end{multicols}
+\addcontentsline{toc}{chapter}{Glossary}      
+      \printglossaries
+\clearpage
+\begingroup
+\let\clearpage\relax
+\addcontentsline{toc}{chapter}{List of Figures}      
+      \listoffigures
+\addcontentsline{toc}{chapter}{List of Tables}      
+\listoftables
+\endgroup      
+      
+
+\end{document}

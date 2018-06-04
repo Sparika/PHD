@@ -1,0 +1,21 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontStyle bold
+
+autonumber
+        participant "Client" as client
+		participant "Resource\nOwner" as ro
+box "Identity Provider" 
+        participant "Authorization\nServer" as as
+        participant "Resource\nServer" as rs
+end box
+
+client 	 ->	ro		: Authorization Request
+ro		 -->> client	: Authorization Grant
+client 	 ->	as		: Authorization Grant
+as		 -->> client	: Access Token
+client 	 ->	rs		: Access Token
+rs		 -->> client	: Protected Resource
+
+@enduml

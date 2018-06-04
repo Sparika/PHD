@@ -1,0 +1,89 @@
+\chapter{Conclusion}
+\label{conclusion}
+
+\glsresetall
+
+In this thesis, we have studied how users can control the trust and security level of their Web Real-Time Communications.
+WebRTC is a standardisation effort for interoperable real-time communication in the Web, in line with the specifications of HTML5 technologies.
+These specifications aim to provide for dynamic webpages, running in a compatible browser, and suitably authorized by the user, with the capability to set up audio, video, or data communication.
+We first conducted a research survey on \gls{voip} and WebRTC security research and observed that the WebRTC identity architecture attracted a lot of interest from the community.
+This architecture decouples the signalling path from the identity path by binding media session security certificates to an identity asserted by an \gls{idp}.
+The claim of the specification is that this architecture allows users to trust the security of their sessions even if the \gls{cs} is not trusted.
+However, we noted that the security and privacy of the specification have only been studied from a theoretical point of view~\cite{de2016ensuring}. 
+In particular, the cross-implementation issues between \gls{sso} protocol and WebRTC are rarely considered~\cite{li2014calling,de2016ensuring}. 
+The specification itself only sketches an implementation with the OAuth protocol in its annexe~\cite{I-D.ietf-rtcweb-security-arch}. 
+We neither observed research considering the \gls{idp} as a possible attacker of the user's privacy.
+
+Paradoxically, the WebRTC identity path is left for the \gls{cs} to configure and control as it is the \gls{cs} who sets the \gls{idp} to use.
+From our point of view, it is not clear if the identity path can be trusted independently of the \gls{cs}.
+Our intuition is that users should have more information and control over the security and trust level of their communications.
+With this objective in mind, we studied the following research questions:
+
+\begin{itemize}
+\item \textbf{RQ1}: What are the risks for the user of a WebRTC session and which abstractions can we use to show these risks to the user?
+\begin{itemize}
+    \item \textbf{RQ1.1}: Are there any security vulnerabilities in the identity path of the WebRTC security architecture?
+    \item \textbf{RQ1.2}: How do users understand the definition of trust in actors of the communication setup?
+    \item \textbf{RQ1.3}: Does our trust and security model helps users understand the security of their WebRTC communication?
+\end{itemize}
+\item \textbf{RQ2}: Can we act on a WebRTC session to raise the trust and security level? 
+\begin{itemize}
+    \item \textbf{RQ2.1}: How to let users negotiate the other peer's identity parameters?
+\end{itemize}
+\item \textbf{RQ3}: Can we let users choose actors they trust to participate in the communication setup?
+\begin{itemize}
+    \item \textbf{RQ3.1}: Do RP require specialised API?
+    \item \textbf{RQ3.2}: Is dynamic discovery and registration commonly available for RP?
+    \item \textbf{RQ3.3}: Do RP requires a trust relationship with the supported IdP?
+    \item \textbf{RQ3.4}: Can we leverage the WebRTC identity architecture to let users chose their IdP for user-to-server authentication?
+\end{itemize}
+\end{itemize}
+
+%\paragraph{}
+To answer these research questions, we have proposed three main contributions.
+
+\paragraph{In our first contribution} (in Chapter~\ref{webrtcprivacy}), we have studied additional privacy implications focusing on the WebRTC identity architecture and on the role of the \gls{idp}.
+
+We first presented our implementation of the WebRTC identity architecture and in particular the integration of the \gls{idp} Proxy component with the \gls{oidc} protocol.
+This work reveals that while \gls{oidc} facilitates the creation and signature of WebRTC identity assertion, its integration is not straightforward.
+In particular, although WebRTC offers an abstract authentication delegation interface it is not particularly suited to manage authorization delegation.
+We then answered to RQ1.1 by showing additional privacy risks that \gls{idp} should take in consideration to implement the WebRTC identity architecture.
+We also showed how the \gls{idp} can compromise users' privacy without their explicit consent.
+The central role and responsibility of \gls{idp} is reinforced by their inclusion in WebRTC call setup.
+
+We then focused on answering RQ3 to find if we can let users chose actors they trust to participate in the communication setup.
+We conducted a survey of the top-500 websites' usage of OAuth~2 and \gls{oidc} to identify possible reasons for this situation.
+We classified \gls{rp} by the types of authorization they request to users.
+Our results show that a majority of \gls{rp}, 58\% of 103, do not require specialised data.
+However, we also observed that \gls{oidc} proposes standardised profile claims, scopes, endpoint, and data format but is implemented by only a few \gls{idp}.
+Similarly, \gls{oidc} offers optional standards for dynamic discovery and registration of \gls{rp} but these are not implemented at all on surveyed \gls{idp}.
+This may be due to necessary trust relations between \gls{idp} and \gls{rp} but our survey did not allow us to answer for that matter.
+Finally, we conducted a survey, targeted at developers, to identify important \gls{idp}'s properties in the developer's opinion.
+Our results show that a consensus exists on the need for a strong authentication and well-crafted user experience but not on other properties.
+Our conclusion on RQ3.1 and RQ3.2 is that while technical solutions for allowing users to choose their \gls{idp} exist, these are not implemented by \gls{idp} and \gls{rp} alike.
+
+\paragraph{In our second contribution} (in Chapter~\ref{identitynegotiation}), we have looked at solutions to give users more control over WebRTC identity parameters: their peers' authentication and their own \gls{idp}.
+
+We first proposed \gls{acor}, a \gls{sdp} extension to negotiate the Authentication Class and the \gls{idp}'s Origin for the authentication of the other party during a WebRTC call.
+We implemented our solution in a WebRTC service and tested it using Firefox to answer RQ2.1.
+Our tests revealed that while it is possible to request identity parameters to the other peer, obtaining feedback on the peer's authentication class is not possible at the moment.
+We believe that this missing feature may be useful even outside of a negotiation use case and that it could easily be supported by the WebRTC identity architecture.
+
+We then presented WebConnect, a web identity metasystem to let users select their trusted \gls{idp}.
+WebConnect answers RQ3.4 and show that the WebRTC identity architecture can be leveraged to build a user-to-server authentication mechanism.
+We implemented a prototype version based on a Firefox extension and reusing \gls{idp} Proxy implemented in Section~\ref{idpproxyimplem}.
+We thus believe that a Web Identity Metasystem such as WebConnect is a good way to give users more control over which identity services they want to use both in WebRTC and on the Web in general.
+
+\paragraph{In our third contribution} (in Chapter~\ref{webrtcmodel}), we have proposed a model representing the security of a WebRTC session so that users may have more understanding of the security of their WebRTC session.
+
+We presented our methodology based on an iterative decomposition process.
+Our model uses the security parameters of the signalling process, media encryption, but also trust parameters configured by the user.
+It is a representation of the user's trust in the confidentiality of its session, from its own point-of-view.
+In addition, we considered the transitive nature of trust relations and proposed an omniscient view of the session confidentiality model.
+We then discussed an instantiation of our model and propose an utility function for security parameters.
+
+To validate our model, we conducted a preliminary experiment on non-experts users.
+In this study, we evaluated how users understand the definition of trust in actors of the communication setup and how our trust model helps them understand the security of their WebRTC communication. 
+This study was based on an online survey offering participants to interact with a dynamic implementation our model.
+This survey helped to identify potential difficulties for the understanding of the model and the measure of users perception.
+

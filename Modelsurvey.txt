@@ -1,0 +1,20 @@
+id	 mobile	 intMobile	 ott	 company	 ottCompany	 widget	 insecure	 idp	 webrtcHelpClarify	 webrtcHelpTrust	 webrtcLevel webrtcAgree	 webExpertise	 rtcExpertise	 securityExpertise
+0	 undefined	 undefined	 undefined	 undefined	 undefined	 undefined	 undefined	 undefined	 undefinedundefined	 undefined	 	 undefined	 End-User	 End-User	 End-User
+1	 0	 0	 0	 0	 0	 0	 0	 0	 Interesting point of viewInteresting point of view	 undefined	 	 Yes	 End-User	 End-User	 End-User
+2	 0	 0	 0	 0	 0	 0	 0	 0	 Interesting point of viewInteresting point of view	 undefined	 	 Yes	 End-User	 End-User	 End-User
+3	 6	 3	 3	 7	 3	 6	 1	 1	 Slightly interestingSlightly interesting	 undefined	 	 Yes	 Intermediate	 End-User	 End-User
+4	 5	 3	 5	 6	 6	 5	 2	 6	 Slightly interestingInteresting point of view	 undefined	 	 Yes	 Intermediate	 End-User	 Intermediate
+5	 5	 4	 4	 3	 4	 3	 1	 5	 NoNo	 undefined	 	 undefined	 Intermediate	 Intermediate	 Intermediate
+6	 6	 5	 7	 9	 7	 6	 4	 5	 Interesting point of viewSlightly interesting	 undefined	 	 Some errors	 Expert	 Intermediate	 Intermediate
+7	 4	 3	 4	 4	 4	 7	 2	 4	 Slightly interestingSlightly interesting	 undefined	 	 undefined	 End-User	 End-User	 Intermediate
+8	 10	 10	 10	 10	 10	 10	 10	 10	 InterestingInteresting	 I don't understand the model	 	 Yes	 End-User	 End-User	 End-User
+9	 3	 2	 3	 4	 3	 3	 1	 2	 InterestingInteresting	 One or two level	 	 Yes	 Expert	 End-User	 Intermediate
+10	 6	 4	 6	 6	 6	 3	 2	 1	 InterestingInteresting	 One or two level	 	 I don't know	 Expert	 End-User	 Intermediate
+11	 9	 7	 6	 6	 4	 3	 0	 5	 Slightly interestingSlightly interesting	 Top value	 	 I don't know	 Intermediate	 Intermediate	 Intermediate
+12	 9	 4	 6	 7	 6	 5	 3	 6	 Slightly interestingSlightly interesting	 One or two level	 	 Yes	 Intermediate	 End-User	 End-User
+13	 3	 3	 3	 3	 4	 5	 3	 3	 InterestingSlightly interesting	 One or two level	 	 I don't know	 End-User	 End-User	 Intermediate
+14	 6	 5	 6	 9	 8	 8	 0	 6	 InterestingInteresting	 The whole tree	 	 Yes	 Intermediate	 Intermediate	 End-User
+15	 6	 5	 6	 8	 8	 8	 0	 0	 InterestingInteresting	 The whole tree	 	 I don't know	 Intermediate	 End-User	 End-User
+16	 7	 4	 6	 8	 5	 5	 0	 5	 Slightly interestingSlightly interesting	 Top value	 	 Some errors	 Expert	 Intermediate	 Expert
+17	 7	 6	 7	 8	 4	 2	 0	 1	 InterestingInteresting	 The whole tree	 	 I don't know	 Intermediate	 Intermediate	 End-User
+18	 0	 0	 3	 0	 3	 3	 0	 3	 InterestingInteresting	 One or two level	 	 I don't know	 Expert	 Expert	 End-User

@@ -1,0 +1,240 @@
+\restoregeometry
+\renewpagestyle{scrheadings}{
+  {\hspace{-\marginparwidth}\hspace{-\marginparsep}\makebox[\overflowingheadlen][l]{\makebox[2em][r]{\thepage}\quad\rule{1pt}{100pt}\quad{}\leftmark}}%
+  {\makebox[\overflowingheadlen][r]{\rightmark\quad\rule{1pt}{100pt}\quad\makebox[2em][l]{\thepage}}}%
+  {}
+}{
+  {}%
+  {}%
+  {}
+}
+\renewpagestyle{plain.scrheadings}{
+  {}%
+  {}%
+  {}
+}{
+  {\thepage}%
+  {\makebox[\overflowingheadlen][r]{\thepage}}%
+  {}
+}
+\chapter*{Résumé en Français}
+\thispagestyle{empty}
+\addcontentsline{toc}{chapter}{Résumé en Français}
+\glsresetall
+
+\section*{Contexte}
+Communication, du latin communicatio~\cite{communicatio}, est défini par le dictionnaire Oxford comme étant ``the imparting or exchanging of information'' et ``the means of sending or receiving information, such as telephone lines or computers''~\cite{communication}.
+Face à une incertitude ou à un risque, un tel échange n'est possible que si une relation de confiance peut être établie entre l'émetteur et le récepteur.
+Cette relation de confiance doit aussi concerner les moyens utilisés pour communiquer.
+Les communications écrites ont été développées au travers de plusieurs révolutions : depuis les pictogrammes gravés dans la pierre jusqu'au signaux électroniques répliqués et transmis instantanément.
+Bien que ces révolutions aient rendu les communications omniprésentes, le besoin fondamental de confiance reste présent.
+
+Depuis l'antiquité, politiciens et généraux ont toujours eu le besoin de communications sécurisées.
+La stéganographie, le fait de cacher un message à la vue de tous, est l'une des plus anciennes techniques pour sécuriser une communication écrite.
+Une telle technique peut, par exemple, être réalisée en utilisant une encre invisible ou en utilisant certains bits d'une image numérique pour encoder un message secret.
+La cryptographie, au contraire, est une technique de transformation d'un message secret, un texte en clair, vers un texte chiffré afin d'en cacher son sens.
+La scytale, présentée sur la Figure \ref{figfr:scytale}, est une technique spartiate de cryptographie par substitution et le premier usage institutionnel de cryptographie militaire.
+Elle aurait été utilisé en 404~a.v.J.C.~\cite{singh2000code}.
+De même, le chiffre de César est l'une des techniques cryptographiques les plus simples.
+Dans cette technique, les lettres d'un alphabet sont remplacées par d'autres lettres en utilisant un décalage donné.
+Jules César aurait utilisé une distance de décalage de trois lettres afin d'écrire à ses généraux.
+En connaissant la valeur de décalage, c'est à dire la clé secrète, le destinataire peut inverser le décalage et récupérer le texte clair.
+
+\marginpar{
+\captionsetup{type=figure}
+\includegraphics[width=\marginparwidth]{images/skytale}
+\caption[]{Une scytale. Une bande de parchemin était enroulée avant d'écrire le message, une lettre par tour. Une fois déroulé, le parchemin était illisible à moins de posséder une scytale du même diamètre.}
+ \label{figfr:scytale}
+}
+
+Les machines à chiffrement électromécanique, telles que la fameuse machine Enigma, ont apporté une impressionnante augmentation des possibilités de chiffrement.
+Lors de la seconde guerre mondiale, les efforts de cryptanalyse des chercheurs alliés visant à casser les codes électromécaniques menèrent au développement des premiers ordinateurs.
+Cette percée mena finalement à l'utilisation d'algorithmes cryptographiques fondés sur des problèmes mathématiques complexes.
+De plus, l'informatique permet le chiffrement de n'importe quel type de données encodées en séquences de bits.
+Le développement continu de l'informatique et des 'algorithmes de chiffrement publics ont rendu la sécurité des communications accessibles aux petites entreprises et aux individus.
+Aujourd'hui, les communications sont chiffrées par défaut, et les utilisateurs sont éduqués à prêter attention aux indicateurs de sécurité~\cite{mozillasecurityblog2017communicating} tels que l'icone HTTPS représentant un cadenas vert~\ref{figfr:firefox_warning}.
+Cependant, un tiers de confiance est malgré-tout souvent requis afin d'établir la communication.
+
+Plusieurs définitions de la confiance ont été proposées.
+Inspirés par McKnight et Chervany~\cite{mcknight1996meanings}, Jøsang et Presti définissent la confiance comme: ``the extent to which one party is willing to depend on something or somebody in a given situation with a feeling of relative security, even though negative consequences are possible''~\cite{josang2004analysing}.
+Dans le sens d'une action, nous dirions que la confiance est la décision par un agent intelligent de coopérer face à une incertitude ou un risque au sujet du comportement (sa capacité ou son intention) d'un autre agent.
+La confiance est une heuristique basée sur l'historique des interactions, la réputation donnée par une communauté, ou les recommandations transmises par d'autres sources de confiance.
+
+La sécurité des informations vise à protéger les informations échangées lors d'une communication, en s'assurant que certaines propriétés de sécurité sont vérifiées:
+\begin{itemize}
+\item Le secret des échanges, la discrétion (en: privacy),
+\item La confidentialité des messages échangés,
+\item L'intégrité du contenu,
+\item La non-répudiation de la communication,
+\item L'authentification de l'identité des autres participants.
+\end{itemize} 
+                
+Les systèmes sécurisés sont complexes à construire et peuvent être peu pratiques pour un usage quotidien.
+Dans cette situation, la confiance peut être une façon plus confortable d'assurer la sécurité des communications.
+
+Le World Wide Web (le Web) est construit sur un modèle client-serveur.
+Sa sécurité est basée sur une chaîne de certificat ancrée dans le User-Agent, généralement un navigateur Web.
+Les sites Web sont authentifiés par leurs certificats et les communications entre navigateurs et serveurs sont sécurisées par des protocoles tels que TLS.
+L'émergence de nouvelles fonctionnalités du Web offre beaucoup plus de cas d'usage via l'utilisation d'une interface de programmation (API) JavaScript.
+Ces nouvelles interactions sont souvent tripartites entre un utilisateur et deux autres serveurs: un Service Provider (SP) et un Relying Party (RP).
+C'est par exemple le cas des scénarios de délégation d'authentification.
+Dans ces situations, chaque partie ne peut pas monitorer les interactions entre les deux autres parties.
+La sécurité et la confiance de telles communications peuvent donc être plus dures à évaluer.
+Chaque entité doit alors baser ses décisions sur des critères subjectifs et sa propre évaluation du risque, donc prendre une décision de confiance.
+
+
+\marginpar{
+\captionsetup{type=figure}
+\includegraphics[width=\marginparwidth]{images/firefox_warning}\\\\
+\includegraphics[width=\marginparwidth]{images/httpslevel}
+\caption[]{Avertissements de sécurité sur le navigateur Firefox.}
+\label{figfr:firefox_warning}.
+}
+
+Les communications en temps réel, sont un autre exemple de ces cas d'usage complexes impliquant plus qu'une simple relation client-serveur.
+WebRTC est un ensemble d'API Web et de protocoles, spécifiés par le W3C et l'IETF, permettant les appels audio, vidéo et le partage de données en mode pair à pair.
+Le déploiement de ce nouveau standard pourrait être une opportunité d'ouverture des futurs services \gls{ott} [de l'accès internet].
+Puisque WebRTC apporte de nouvelles fonctionnalités à l'écosystème Web, sa sécurité est un facteur critique de son succès.
+Dans ce but, il est important que la spécification prenne en compte les problèmes rencontrés par les technologies précédentes.
+C'est notamment vrai concernant la gestion d'identité, en particulier comparée à la qualité de service.
+Comme les expériences précédentes l'ont prouvé, un modèle d'identité fragile peut avoir un impact important et peut être particulièrement dur à corriger une fois le système déployé. 
+
+
+\section*{Défis ouverts}
+Notre intuition est que les utilisateurs de services de communication temps réel devraient bénéficier de plus d'informations et de contrôle sur la sécurité et le niveau de confiance de leurs sessions.
+C'est notre objectif global.
+Pour cela, nous devons construire un modèle représentant l'architecture de communication, les différents canaux, protocoles et les acteurs impliqués.
+Ce modèle nous permettra de construire une métrique caractérisant le risque d'utiliser un système de communication, c'est-à-dire son niveau de confiance et de sécurité.
+
+Au vu de cet objectif, les questions suivantes sont ouvertes : 
+Comment modéliser une configuration de sécurité d'une architecture de communication constituée de plusieurs canaux, protocoles et acteurs? 
+Le même modèle peut-il intégrer des informations de confiance et de sécurité en une seule métrique?
+Quels paramètres de l'architecture de communication doivent être utilisés pour construire cette métrique?
+Peut-on construire ce modèle dynamiquement?
+
+En supposant l'existence d'un modèle de confiance et de sécurité pour une architecture de communication, ce modèle pourrait être utilisé pour agir sur le système afin d'en augmenter  le niveau de confiance et de sécurité.
+Afin de donner ce genre de contrôle aux utilisateurs, nous devons aussi répondre aux questions suivantes:
+Les utilisateurs peuvent-ils contrôler le niveau de confiance et de sécurité de leurs sessions de communication?
+Est-il possible de faire confiance à une architecture de communication dans laquelle certains acteurs ne sont pas de confiance?
+Les utilisateurs peuvent-ils choisir des acteurs de confiance pour l'établissement de leurs communications?
+
+Afin de permettre aux utilisateurs de contrôler la confiance et la sécurité de leurs communications, la diversité des configurations possibles doit être suffisamment élevée.
+Cependant, les anciens systèmes de communication téléphoniques obéissent à des standards stricts.
+Il peut y avoir plusieurs acteurs opérant le réseau, mais ils opèrent sous des configurations fermées et similaires.
+Il y a aussi de nombreux services fournis \gls{ott}, mais ils opèrent en mode silo et en mode boîte noire.
+La diversité de configuration de ces systèmes est donc elle aussi basse.
+Au contraire, WebRTC est une technologie Web disruptive.
+Du fait de sa simplicité , il est attendu que le nombre de services WebRTC explose dans un futur proche.
+La version finale de WebRTC n'a pas encore été publiée et certaines fonctionnalités restent à implémenter dans les navigateurs.
+C'est donc le bon moment pour étudier l'architecture de sécurité WebRTC.
+
+\marginpar{
+\captionsetup{type=figure}
+\centering
+\includegraphics[width=.6\marginparwidth]{images/webrtc}
+\caption[]{Le logo de WebRTC.}
+}
+
+Pour ces raisons, nous souhaitons focaliser nos questions de recherche sur la spécification WebRTC.
+Nous voulons comprendre à quel point les utilisateurs peuvent avoir confiance dans une session WebRTC, y compris si l'un des acteurs n'est pas de confiance.
+Notre première question de recherche est donc la suivante:
+
+\begin{itemize}
+\item \textbf{RQ1}: Quels sont les risques pour l'utilisateur d'une session WebRTC et quelle abstraction peut-on utiliser pour représenter ces risques aux utilisateurs?
+\end{itemize}
+
+Une façon de s'assurer qu'une session est sécurisée est d'interagir avec des tiers de confiance, soit avant d'établir la session, soit lors de la session pour en augmenter le niveau de confiance et de sécurité.
+Cela pose les questions suivantes:
+
+\begin{itemize}
+\item \textbf{RQ2}: Peut-on agir sur une session WebRTC afin d'en augmenter le niveau de confiance et de sécurité?
+\item \textbf{RQ3}: Peut-on laisser les utilisateurs choisir des acteurs de confiance pour l'établissement de la communication?
+\end{itemize}
+
+\section*{Contributions}
+Dans cette thèse, je propose trois contributions principales:
+
+\subsection*{Discrétion liée à l'architecture d'identité de WebRTC}
+Dans notre première contribution, nous étudions l'architecture d'identité WebRTC et plus particulièrement son intégration aux algorithmes de délégation d'authentification existants.
+Cette intégration n'a pas encore été étudiée jusqu'à présent.
+Dans cette perspective, nous implémentons les composants de l'architecture d'identité WebRTC ce qui nous permet de montrer que cette architecture n'est pas particulièrement adaptée à une intégration aux protocoles de délégation d'authentification existants tels qu'OpenID Connect.
+Pour répondre à RQ1, nous montrons ensuite comment la position centrale des fournisseurs d'identité dans l'écosystème du Web est renforcée par leur intégration à l'établissement de session WebRTC, posant ainsi un risque supplémentaire contre la discrétion des utilisateurs.
+Dans l'écosystème Web, la norme est l'architecture des services en silo dont les utilisateurs sont captifs.
+C'est en particulier le cas des systèmes de délégation d'authentification, pour lesquels la plupart du temps, il n'est pas possible de choisir son fournisseur d'identité.
+Afin de répondre à RQ3, nous réalisons une étude afin de déterminer pour quelles raisons les utilisateurs ne peuvent pas choisir leur fournisseur d'identité sur Web.
+Notre étude montre que bien que ce choix soit possible en théorie, l'absence d'implémentation de certains standards par les sites webs et les fournisseurs d'identité empêche ce choix en pratique.
+
+\marginpar{
+\captionsetup{type=figure}
+\includegraphics[width=.9\marginparwidth]{images/acor_negotiation}
+\caption[]{Notre interface de négotiation d'identité sur un service WebRTC.\\\\\\ }
+\label{figfr:acor}
+}
+
+\subsection*{Controller les paramètres d'identité de WebRTC}
+Dans notre seconde contribution, nous cherchons à donner plus de contrôle à l'utilisateur.
+Pour ce faire et en réponse à RQ2, nous proposons une extension de la spécification WebRTC afin de permettre la négociation des paramètres d'identité.
+Un prototype d'implémentation est proposé afin de valider notre proposition (voir Figure~\ref{figfr:acor}).
+Cette implémentation révèle certaines limites dues à l'API d'identité WebRTC empêchant notamment d'obtenir un retour sur le niveau d'authentification de l'autre utilisateur ainsi que l'impossibilité de changer de fournisseur d'identité en cours de session.
+Nous proposons ensuite une API Web permettant aux utilisateurs de choisir leur fournisseur d'identité lors d'une authentification sur un site tiers via une interface de sélection d'identité contrôlée par le navigateur.
+Répondant à RQ3, notre API repose sur une réutilisation de l'architecture d'identité WebRTC dans un scénario client-serveur.
+Nous présentons une implémentation de notre solution, basée sur une extension du navigateur Firefox, afin d'en démontrer l'utilisabilité (voir Figure~\ref{figfr:webconnect}).
+Nos résultats montrent qu'à long terme, l'adoption de cette API pourrait réduire la charge d'implémentation pour les développeurs de sites Web et permettre aux utilisateurs de préserver leur discrétion en choisissant des fournisseurs d'identité de confiance.
+
+
+\marginpar{
+\captionsetup{type=figure}
+\includegraphics[width=.9\marginparwidth]{images/WebConnect}
+\caption[]{L'interface de sélection d'identité de WebConnect.}
+\label{figfr:webconnect}
+}
+
+
+\subsection*{Un modèle de confiance et de sécurité pour WebRTC}
+Enfin dans notre troisième contribution, nous répondons à RQ1 en proposant un modèle de confiance et de sécurité d'une session WebRTC.
+Ce modèle intègre en une seule métrique les paramètres de sécurité utilisés lors de l'établissement de la session, les paramètres d'encryption des flux média, et les paramètres de confiance de l'utilisateur dans les acteurs de la session WebRTC.
+L'objectif de notre modèle est dans un premier temps de permettre aux utilisateurs non-experts de mieux comprendre la sécurité de leurs sessions WebRTC.
+Afin de valider notre approche, nous réalisons une expérimentation préliminaire évaluant la compréhension de notre modèle par des utilisateurs non-experts en sécurité. 
+
+\section*{Publications}
+Mes travaux ont été le sujet de plusieurs publications et contributions, en voici la liste:
+
+\subsection*{Publications Scientifiques}
+\begin{description}
+\item \cite{corre_webrtc_2017} \fullcite{corre_webrtc_2017}
+\item \cite{corre_whyusers_2017} \fullcite{corre_whyusers_2017}
+\item \cite{javed_cross-domain_2017} \fullcite{javed_cross-domain_2017}
+\end{description}
+
+\subsection*{Internet Drafts}
+\begin{description}
+\item \cite{I-D.copeland-rtcweb-p2p-idp-auth} \fullcite{I-D.copeland-rtcweb-p2p-idp-auth}
+\end{description}
+
+\paragraph{A note on RFC} Requests For Comments are documents published by the IETF and describing technical aspects of the internet.
+RFC are first proposed as \textit{draft} with an expiration date of 6 months, which can be extended by submitting new version of the draft.
+If an interest emerge, a working group may form.
+This working group will develop the draft further until a request to publish it as a RFC is submitted.
+Not all RFCs are however submitted on the standard track.
+Their status may alternatively be \textit{informational}, \textit{experimental}, \textit{best current practice}, \textit{historic}, or \textit{unknown}.
+
+\subsection*{Brevets}
+\begin{description}
+\item \cite{corre_authent} \fullcite{corre_authent}
+\end{description}
+
+\subsection*{Rapports Techniques}
+\begin{description}
+\item \cite{copeland_framework_2015} \fullcite{copeland_framework_2015}
+
+\item \cite{crom_management_2015} \fullcite{crom_management_2015}
+
+\item \cite{crom_implementation_2016} \fullcite{crom_implementation_2016}
+
+\item \cite{crom_implementation_2017} \fullcite{crom_implementation_2017}
+
+\end{description}
+
+
+Cette thèse présente le résultat de notre travail de recherche conduit lors des trois dernières années. Il est le résultat d'une collaboration entre l'équipe Identity and Trust Architecture d'Orange Labs et l'équipe DiverSE de l'INRIA.
+Nous avons aussi contribué au projet H2020 reThink, en particulier à l'architecture d'identité et de sécurité.

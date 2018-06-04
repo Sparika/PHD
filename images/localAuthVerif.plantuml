@@ -1,0 +1,33 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontStyle bold
+
+autonumber
+		participant "JS Client B" as js
+
+		participant "UA B" as uaa
+		
+		box "Communication Service A"
+        participant "IdP Proxy A" as idpa
+        participant "CSA" as csa
+		end box
+
+js		 -> uaa			: setRemoteDescription \n SDP a=identity:ASSERTION
+uaa		 -> csa			: GET ./well-known/idp-proxy/local
+csa		 -> uaa			: 200
+create idpa	
+uaa		 -> idpa		: <<CREATE>>
+uaa		 ->	idpa		: validateAssertion(ASSERTION)
+idpa	 -> csa			: GET /assertion/ASSERTION.ID
+alt Success
+csa		 -->> idpa		: 200 JWT Identity
+idpa	 -->> uaa		: resolve RTCIdentityValidationResult
+else Assertion ID not found
+csa		 -->> idpa		: 404
+idpa	 -->> uaa		: reject
+uaa		 -->> js		: reject 
+end
+
+
+@enduml

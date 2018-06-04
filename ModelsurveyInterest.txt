@@ -1,0 +1,20 @@
+id	 webrtcHelpClarify	 webrtcHelpTrust	 webrtcLevel	 webExpertise	 rtcExpertise	 securityExpertise
+0	 undefined	 undefined	 undefined	 End-User	 End-User	 End-User
+1	 Interesting point of view	 Interesting point of view	 undefined	 End-User	 End-User	 End-User
+2	 Interesting point of view	 Interesting point of view	 undefined	 End-User	 End-User	 End-User
+3	 Slightly interesting	 Slightly interesting	 undefined	 Intermediate	 End-User	 End-User
+4	 Slightly interesting	 Interesting point of view	 undefined	 Intermediate	 End-User	 Intermediate
+5	 No	 No	 undefined	 Intermediate	 Intermediate	 Intermediate
+6	 Interesting point of view	 Slightly interesting	 undefined	 Expert	 Intermediate	 Intermediate
+7	 Slightly interesting	 Slightly interesting	 undefined	 End-User	 End-User	 Intermediate
+8	 Interesting	 Interesting	 I don't understand the model	 End-User	 End-User	 End-User
+9	 Interesting	 Interesting	 One or two level	 Expert	 End-User	 Intermediate
+10	 Interesting	 Interesting	 One or two level	 Expert	 End-User	 Intermediate
+11	 Slightly interesting	 Slightly interesting	 Top value	 Intermediate	 Intermediate	 Intermediate
+12	 Slightly interesting	 Slightly interesting	 One or two level	 Intermediate	 End-User	 End-User
+13	 Interesting	 Slightly interesting	 One or two level	 End-User	 End-User	 Intermediate
+14	 Interesting	 Interesting	 The whole tree	 Intermediate	 Intermediate	 End-User
+15	 Interesting	 Interesting	 The whole tree	 Intermediate	 End-User	 End-User
+16	 Slightly interesting	 Slightly interesting	 Top value	 Expert	 Intermediate	 Expert
+17	 Interesting	 Interesting	 The whole tree	 Intermediate	 Intermediate	 End-User
+18	 Interesting	 Interesting	 One or two level	 Expert	 Expert	 End-User

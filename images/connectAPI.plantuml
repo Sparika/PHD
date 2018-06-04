@@ -1,0 +1,47 @@
+@startuml
+
+skinparam monochrome true
+skinparam defaultFontStyle bold
+
+autonumber
+
+        participant "User" as user
+        participant "User-Agent" as ua
+		participant "IdP Proxy" as idpp
+		participant "Site Client(JS)" as js
+        participant "Site Server" as node
+		participant "IdP Server" as idp
+		
+group Identity selection and ASSERT generation procedures.	
+user 	 -> js 			: Click connect button
+js		 -> ua 			: connect()
+ua		 -> user		: Prompt for Identity
+user	 -> ua			: IDP{URL, TYPE}
+
+ua		 -> idp			: GET https://URL/.well-known/TYPE
+idp		 -->> ua			: JS Code
+
+create idpp	
+
+ua		 -> idpp 		: <<Create>>
+ua 		 -> idpp		: GenerateASSERT()
+
+opt User authentication procedure
+end
+
+idpp 	 -->> ua 			: Resolve(ASSERT)
+ua	 	 -->> js			: Resolve(ASSERT)
+end
+
+
+
+group Identity ASSERT verification and login.
+js		 -> node		: GET LOGIN_URL?ASSERT
+node	 -> node		: Extract JKU header from ASSERT
+node	 -> idp			: GET JKU over https
+idp		 -->> node		: Key
+node	 -> node		: Verify ASSERT signature with key
+node	 -->> ua			: 200 OK
+end
+
+@enduml
