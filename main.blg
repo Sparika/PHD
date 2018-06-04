@@ -1,0 +1,18 @@
+[0] Config.pm:318> INFO - This is Biber 1.8
+[0] Config.pm:321> INFO - Logfile is 'main.blg'
+[50] biber-darwin:275> INFO - === Lun jui  4, 2018, 21:49:52
+[50] Biber.pm:333> INFO - Reading 'main.bcf'
+[116] Biber.pm:630> INFO - Found 169 citekeys in bib section 0
+[144] Biber.pm:3053> INFO - Processing section 0
+[160] Biber.pm:3190> INFO - Looking for bibtex format file 'biblio/publications.bib' for section 0
+[162] bibtex.pm:812> INFO - Found BibTeX data source 'biblio/publications.bib'
+[195] Biber.pm:3190> INFO - Looking for bibtex format file 'biblio/thesis.bib' for section 0
+[209] bibtex.pm:812> INFO - Found BibTeX data source 'biblio/thesis.bib'
+[356] Utils.pm:169> WARN - BibTeX subsystem: /var/folders/x8/mswt4q711nz4dv6kcr5bjxdw0000gn/T/RBtpVEJZJa/thesis.bib_71383.utf8, line 1091, warning: 14 characters of junk seen at toplevel
+[358] Biber.pm:3190> INFO - Looking for bibtex format file 'biblio/sota.bib' for section 0
+[363] bibtex.pm:812> INFO - Found BibTeX data source 'biblio/sota.bib'
+[590] Biber.pm:2939> INFO - Overriding locale 'fr_FR.UTF-8' default tailoring 'variable = shifted' with 'variable = non-ignorable'
+[590] Biber.pm:2945> INFO - Sorting 'entry' list 'none' keys
+[834] bbl.pm:482> INFO - Writing 'main.bbl' with encoding 'latin9'
+[860] bbl.pm:555> INFO - Output to main.bbl
+[860] Biber.pm:105> INFO - WARNINGS: 1
